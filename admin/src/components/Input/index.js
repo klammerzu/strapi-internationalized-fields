@@ -12,7 +12,6 @@ import {
   Tooltip,
 } from '@strapi/design-system';
 import { Earth } from "@strapi/icons";
-import { BlocksInput } from '../BlocksInput/BlocksInput';
 
 const Input = React.forwardRef((props, ref) => {
   const locales = useSelector((state) => state.i18n_locales.locales);
@@ -72,7 +71,6 @@ const Input = React.forwardRef((props, ref) => {
       hint={description && formatMessage(description)}
       required={required}
     >
-      <BlocksInput />
       <Flex direction="column" alignItems="stretch" gap={1}>
         <FieldLabel action={labelAction} gap={1}>
           <Flex gap={1}>
