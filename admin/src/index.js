@@ -43,6 +43,29 @@ export default {
         // declare options here
       },
     });
+    app.customFields.register({
+      name: "internationalized-blocks",
+      pluginId: "internationalized-fields",
+      type: "json",
+      intlLabel: {
+        id: "internationalized-fields.plugin.label",
+        defaultMessage: "Internationalized Blocks Text",
+      },
+      intlDescription: {
+        id: "internationalized-fields.plugin.description",
+        defaultMessage: "Rich Text that can be translated to multiple languages.",
+      },
+      icon: PluginIcon,
+      components: {
+        Input: async () =>
+          import(
+            /* webpackChunkName: "input-component" */ "./components/TranslateableBlocksInput"
+          ),
+      },
+      options: {
+        // declare options here
+      },
+    });
   },
 
   bootstrap(app) {

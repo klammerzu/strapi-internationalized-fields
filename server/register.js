@@ -11,4 +11,14 @@ module.exports = ({ strapi }) => {
       isResizable: true,
     },
   });
+  strapi.customFields.register({
+    name: "internationalized-blocks",
+    plugin: "internationalized-fields",
+    type: "json",
+    inputSize: {
+      // optional
+      default: 12,
+      isResizable: false,
+    },
+  });
 };

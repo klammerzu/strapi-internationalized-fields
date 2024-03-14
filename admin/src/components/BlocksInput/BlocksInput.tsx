@@ -49,23 +49,6 @@ const BlocksInput = React.forwardRef<{ focus: () => void }, BlocksInputProps>(
     return (
       <>
         <Flex direction="column" alignItems="stretch" gap={1}>
-          <Flex gap={1}>
-            <Typography
-              variant="pi"
-              fontWeight="bold"
-              textColor="neutral800"
-              as="label"
-              id={uniqueId}
-            >
-              {label}
-              {required && (
-                <Typography textColor="danger600" lineHeight="0px">
-                  *
-                </Typography>
-              )}
-            </Typography>
-            {labelAction && <LabelAction paddingLeft={1}>{labelAction}</LabelAction>}
-          </Flex>
           <BlocksEditor
             name={name}
             error={error}
