@@ -32,6 +32,9 @@ const Input = React.forwardRef((props, ref) => {
     catch (e) {
       initializedValue = {};
     }
+    if (initializedValue === null) {
+      initializedValue = {};
+    }
     locales.forEach((locale) => {
       if (!initializedValue[locale.code]) {
         initializedValue[locale.code] = "";
