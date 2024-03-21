@@ -17,10 +17,10 @@ This plugin is currently in alpha. Contributions are welcome!
 ## ❓ Why this Plugin?
 
 ### The Problem
-Beside Strapi beeing one of the best CMS out there, it faces some critical issues when it comes to internationalization. As every translation is stored as seperate entry in the database, the need to manage relations across multiple entries makes working on complex projects very hard.
+Beside Strapi beeing one of the best CMS out there, it gets challenging when it comes to internationalization. As every translation is stored as seperate entry in the database, working with relations in many languages gets a real pain.
 
 ### The solution
-This plugin introduces a _custom field_ that stores all translations within a single entry. This reduces the need for enabling Strapi's i18n and therefore makes working with translateable relations reasonable.
+This plugin introduces _custom fields_ for text and rich text that store all translations within a single entry. This reduces the need for enabling Strapi's i18n and therefore makes working with translateable relations reasonable.
 
 ## ⏳ Installation
 Install the plugin:
