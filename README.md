@@ -60,6 +60,7 @@ Behind the scenes the plugin uses Strapi's `json` field type. The locales will b
   }
 }
 ```
+Rich text object must be back-converted using `JSON.parse()`.
 
 ## 🔧 Configuration
 Look that you have the i18n plugin enabled. There is no futher configuration needed. The plugin automatically detects the configured languages.
