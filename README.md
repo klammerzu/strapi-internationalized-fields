@@ -2,9 +2,8 @@
 Single entry based translations.
 
 ```json
-// API RESULT
 {
-  "my_field": {
+  "my_api_result": {
     "en": "This is easy.",
     "de": "Alles im selben Eintrag.",
     "fr": "Je ne parle pas francais."
