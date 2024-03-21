@@ -21,7 +21,7 @@ export default {
      */
     app.addReducers(reducers);
     app.customFields.register({
-      name: "internationalized",
+      name: "internationalized-text",
       pluginId: "internationalized-fields",
       type: "json",
       intlLabel: {
@@ -36,7 +36,7 @@ export default {
       components: {
         Input: async () =>
           import(
-            /* webpackChunkName: "input-component" */ "./components/Input"
+            /* webpackChunkName: "input-component" */ "./components/TranslateableTextInput"
           ),
       },
       options: {

@@ -2,7 +2,7 @@
 
 module.exports = ({ strapi }) => {
   strapi.customFields.register({
-    name: "internationalized",
+    name: "internationalized-text",
     plugin: "internationalized-fields",
     type: "json",
     inputSize: {
