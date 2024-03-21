@@ -47,6 +47,7 @@ const Input = React.forwardRef((props, ref) => {
     setCurrentLocaleValue(initializedValue[currentLocale]);
   }
 
+  // TODO: this callback is called every time the user changes the data. It should be debounced.
   const handleDataChange = (newData) => {
     setCurrentLocaleValue(JSON.stringify(newData));
   };
