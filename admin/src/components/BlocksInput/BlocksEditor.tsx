@@ -169,8 +169,11 @@ interface BlocksEditorProps extends BlocksContentProps {
   disabled?: boolean;
   value?: Attribute.BlocksValue;
   error?: string;
+
+  /** KLAMMERZU */
   currentLocale: string;
   onDataChange: (value: unknown) => void;
+  /** KLAMMERZU */
 }
 
 const BlocksEditor = React.forwardRef<{ focus: () => void }, BlocksEditorProps>(
@@ -210,7 +213,9 @@ const BlocksEditor = React.forwardRef<{ focus: () => void }, BlocksEditorProps>(
       if (isAstChange) {
         incrementSlateUpdatesCount();
 
+        /** KLAMMERZU */
         onDataChange(state);
+        /** KLAMMERZU */
         if (typeof onChange === 'function') {
           onChange({
             // Casting is needed because Slate's onChange type doesn't take into consideration
@@ -242,7 +247,9 @@ const BlocksEditor = React.forwardRef<{ focus: () => void }, BlocksEditorProps>(
         <VisuallyHidden aria-live="assertive">{liveText}</VisuallyHidden>
         <Slate
           editor={editor}
+          /** KLAMMERZU */
           initialValue={value ? JSON.parse(value) : [{ type: 'paragraph', children: [{ type: 'text', text: '' }] }]}
+          /** KLAMMERZU */
           onChange={handleSlateChange}
           key={key}
         >

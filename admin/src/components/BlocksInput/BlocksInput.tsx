@@ -23,8 +23,10 @@ interface BlocksInputProps
   description?: MessageDescriptor;
   labelAction?: React.ReactNode;
   required?: boolean;
+  /** KLAMMERZU */
   currentLocale: string;
   onDataChange: (value: unknown) => void;
+  /** KLAMMERZU */
 }
 
 const BlocksInput = React.forwardRef<{ focus: () => void }, BlocksInputProps>(
@@ -62,8 +64,10 @@ const BlocksInput = React.forwardRef<{ focus: () => void }, BlocksInputProps>(
             ariaLabelId={uniqueId}
             placeholder={formattedPlaceholder}
             value={value}
+            /** KLAMMERZU */
             currentLocale={currentLocale}
             onDataChange={onDataChange}
+            /** KLAMMERZU */
           />
           <Hint hint={hint} name={name} error={error} />
         </Flex>
