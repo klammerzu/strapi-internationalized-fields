@@ -1,4 +1,5 @@
 # Strapi plugin internationalized-fields
+Single entry based translations.
 
 ## ⚠️ Alpha-Version
 This plugin is currently in alpha. Contributions are welcome!
