@@ -169,10 +169,11 @@ interface BlocksEditorProps extends BlocksContentProps {
   disabled?: boolean;
   value?: Attribute.BlocksValue;
   error?: string;
+  onDataChange: (value: unknown) => void;
 }
 
 const BlocksEditor = React.forwardRef<{ focus: () => void }, BlocksEditorProps>(
-  ({ disabled = false, name, onChange, value, error, ...contentProps }, forwardedRef) => {
+  ({ disabled = false, name, onChange, value, error, onDataChange, ...contentProps }, forwardedRef) => {
     const { formatMessage } = useIntl();
     const [editor] = React.useState(() =>
       pipe(withHistory, withImages, withStrapiSchema, withReact, withLinks)(createEditor())
@@ -208,11 +209,14 @@ const BlocksEditor = React.forwardRef<{ focus: () => void }, BlocksEditorProps>(
       if (isAstChange) {
         incrementSlateUpdatesCount();
 
-        onChange({
-          // Casting is needed because Slate's onChange type doesn't take into consideration
-          // that we set Editor['children'] to Attribute.BlocksValue in custom.d.ts
-          target: { name, value: state as Attribute.BlocksValue, type: 'blocks' },
-        });
+        onDataChange(state);
+        if (typeof onChange === 'function') {
+          onChange({
+            // Casting is needed because Slate's onChange type doesn't take into consideration
+            // that we set Editor['children'] to Attribute.BlocksValue in custom.d.ts
+            target: { name, value: state as Attribute.BlocksValue, type: 'blocks' },
+          });
+        }
       }
     };
 

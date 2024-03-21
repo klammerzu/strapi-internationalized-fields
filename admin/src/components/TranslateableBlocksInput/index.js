@@ -47,8 +47,8 @@ const Input = React.forwardRef((props, ref) => {
     setCurrentLocaleValue(initializedValue[currentLocale]);
   }
 
-  const handleChange = (e) => {
-    setCurrentLocaleValue(e.currentTarget.value);
+  const handleDataChange = (newData) => {
+    setCurrentValue(newData);
   };
 
   React.useEffect(() => {
@@ -87,7 +87,7 @@ const Input = React.forwardRef((props, ref) => {
           </Flex>
         </FieldLabel>
 
-        <BlocksInput intlLabel={intlLabel} name={name} />
+        <BlocksInput intlLabel={intlLabel} name={name} onDataChange={handleDataChange}/>
 
         <input
           type="hidden"

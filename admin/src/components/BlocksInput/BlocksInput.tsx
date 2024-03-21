@@ -23,6 +23,7 @@ interface BlocksInputProps
   description?: MessageDescriptor;
   labelAction?: React.ReactNode;
   required?: boolean;
+  onDataChange: (value: unknown) => void;
 }
 
 const BlocksInput = React.forwardRef<{ focus: () => void }, BlocksInputProps>(
@@ -35,6 +36,7 @@ const BlocksInput = React.forwardRef<{ focus: () => void }, BlocksInputProps>(
       error = '',
       hint,
       placeholder,
+      onDataChange,
       ...editorProps
     },
     forwardedRef
@@ -56,6 +58,7 @@ const BlocksInput = React.forwardRef<{ focus: () => void }, BlocksInputProps>(
             {...editorProps}
             ariaLabelId={uniqueId}
             placeholder={formattedPlaceholder}
+            onDataChange={onDataChange}
           />
           <Hint hint={hint} name={name} error={error} />
         </Flex>
