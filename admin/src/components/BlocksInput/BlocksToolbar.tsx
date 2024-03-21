@@ -486,7 +486,7 @@ const BlocksToolbar = () => {
 
     const selectedNode = editor.children[editor.selection.anchor.path[0]];
 
-    if (['image', 'code'].includes(selectedNode.type)) {
+    if (['image', 'code'].includes(selectedNode && selectedNode.type)) {
       return true;
     }
 
