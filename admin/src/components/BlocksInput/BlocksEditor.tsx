@@ -169,11 +169,12 @@ interface BlocksEditorProps extends BlocksContentProps {
   disabled?: boolean;
   value?: Attribute.BlocksValue;
   error?: string;
+  currentLocale: string;
   onDataChange: (value: unknown) => void;
 }
 
 const BlocksEditor = React.forwardRef<{ focus: () => void }, BlocksEditorProps>(
-  ({ disabled = false, name, onChange, value, error, onDataChange, ...contentProps }, forwardedRef) => {
+  ({ disabled = false, name, onChange, value, error, currentLocale, onDataChange, ...contentProps }, forwardedRef) => {
     const { formatMessage } = useIntl();
     const [editor] = React.useState(() =>
       pipe(withHistory, withImages, withStrapiSchema, withReact, withLinks)(createEditor())
@@ -241,7 +242,7 @@ const BlocksEditor = React.forwardRef<{ focus: () => void }, BlocksEditorProps>(
         <VisuallyHidden aria-live="assertive">{liveText}</VisuallyHidden>
         <Slate
           editor={editor}
-          initialValue={value || [{ type: 'paragraph', children: [{ type: 'text', text: '' }] }]}
+          initialValue={value ? JSON.parse(value) : [{ type: 'paragraph', children: [{ type: 'text', text: '' }] }]}
           onChange={handleSlateChange}
           key={key}
         >
