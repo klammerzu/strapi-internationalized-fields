@@ -58,7 +58,7 @@ Don't use `internationalized-fields` on models with enabled `Internationalizatio
 
 
 ## 🤝 Contribute
-Feel free to fork and make pull requests to this plugin. All input is welcome - thanks for all contributions so far!
+You can get the basic concepts in the `CONTRIBUTE.md` file. Feel free to fork and make pull requests to this plugin. All input is welcome - thanks for all contributions so far!
 
 
 ## ⭐️ Support
